@@ -16,7 +16,7 @@ This project uses a deep learning model to classify issues based on input images
 
 You can install the dependencies by running the following command:
 ```bash
-pip install tensorflow matplotlib
+pip install -r requirements.txt
 ```
 
 ## Files in the Repository
@@ -26,6 +26,7 @@ pip install tensorflow matplotlib
 3. **issue_classifier.h5**: Pre-trained deep learning model used for classifying images.
 4. **weights_visualization.py**: Script for visualizing and analyzing the weights of the first layer in the model.
 5. **README.md**: This file providing an overview of the project.
+6. **More files are there please check it**
 
 ## Usage
 
