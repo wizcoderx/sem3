@@ -12,8 +12,7 @@
       "dest": "app.py"
     }
   ],
-  "config": {
-    "maxLambdaSize": "15mb",
-    "runtime": "python3.8"
+  "env": {
+    "PYTHON_VERSION": "3.10"
   }
 }
