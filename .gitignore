@@ -1,3 +1,9 @@
 path_to_env/**
 project_requirements/**
 rail-madad-ai/__pycache__/**
+rail-madad-ai/combining_scripts/**
+rail-madad-ai/ruhsi2/**
+rail-madad-ai/ruhsi2/**
+rail-madad-ai/test_app.py
+rail-madad-ai/token_usage.log
+
