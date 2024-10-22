@@ -42,7 +42,7 @@ mdurl
 ml-dtypes
 murmurhash
 namex
-numpy
+numpy<2.0
 opencv-python
 opt-einsum
 optree
