@@ -49,7 +49,7 @@ optree==0.12.1
 packaging==24.1
 pillow==10.4.0
 preshed==3.0.9
-protobuf==4.25.4  # Keep it to the version that works with TensorFlow 2.17
+protobuf==4.25.4
 pydantic==2.9.0
 pydantic_core==2.23.2
 pydot==3.0.2
@@ -71,8 +71,7 @@ spacy-legacy==3.0.12
 spacy-loggers==1.0.5
 SpeechRecognition==3.10.4
 srsly==2.4.8
-tensorboard==2.17.1  # Same as TensorFlow
-# tensorflow-intel==2.17.0  # Can be removed if you don’t specifically need it
+tensorboard==2.17.1
 tensorflow==2.17.0
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.4.0
