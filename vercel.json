@@ -12,8 +12,8 @@
       "dest": "app.py"
     }
   ],
-  "env": {
-    "PYTHON_VERSION": "3.10"
-  },
-  "buildCommand": "pip install --upgrade pip && pip install -r requirements.txt"
+  "config": {
+    "maxLambdaSize": "15mb",
+    "runtime": "python3.10"
+  }
 }
