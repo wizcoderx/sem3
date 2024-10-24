@@ -4,10 +4,8 @@ import json
 from datetime import datetime
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
-from prioritize_complaints import prioritize_complaints  # Import the prioritize function
 from video_text import analyze_video
 from train_model import classify_image
-
 # Load environment variables (for API key)
 load_dotenv()
 api_key = os.getenv('API_KEY')
@@ -58,7 +56,7 @@ def summarize_issue(description, classification_output):
 
         # Return the summarized content and token information in a dictionary
         return {
-            'problem_category': classification_output,
+            'problem category': classification_output,
             'summary': generated_text,
             'prompt_token_count': prompt_token_count,
             'candidates_token_count': candidates_token_count,
@@ -89,13 +87,16 @@ def classify_image_route():
     # Here, call the image classification function from your backend (not provided in your code).
     # For demonstration purposes, we'll simulate the classification output.
 
+    # Simulate classification logic - replace this with the actual call to your classification function
     classification_output = classify_image(image_url)  # Assume classify_image() returns a string
 
-    # Use a fixed user description for summarization
-    user_description = f"An issue detected is classified as : {classification_output} Two people fighting on inside the train coach."
-
+    # Use a fixed user description for summarization (this can be changed as needed)
+    user_description = f"An issue detected is classified as : {classification_output} Two people fighting on inside the train coach. " # here you need to cheangge the desciption and accept the one that will be entered by the user.
+    print(classification_output)
     # Generate the summary using the Gemini API
     summary_result = summarize_issue(user_description, classification_output)
+
+    # print(summary_result)
 
     # Log token usage
     log_token_usage(
@@ -107,19 +108,9 @@ def classify_image_route():
     # Return the result as a JSON response
     return jsonify(summary_result)
 
-# New Route for Prioritizing Complaints
-@app.route('/prioritize_complaints', methods=['POST'])
-def prioritize_complaints_route():
-    complaints = request.json.get('complaints')
-    if not complaints or not isinstance(complaints, list):
-        return jsonify({"error": "Invalid input, expected a list of complaints"}), 400
-
-    try:
-        result = prioritize_complaints(complaints)
-        return jsonify(result)
-    except ValueError as e:
-        return jsonify({"error": str(e)}), 500
-
-
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# http://localhost:5000/classify?video_url=https%3A%2F%2Futfs.io%2Ff%2F978f9838-8ab3-4c8c-a1c8-efb41f609597-b08w7r.mp4
+# http://localhost:5000/image?image_url=https://utfs.io/f/059547f8-fafc-482b-9b53-5e5dbefbc2e4-m2318w.jpeg
